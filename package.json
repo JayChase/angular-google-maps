@@ -1,5 +1,5 @@
 {
-  "name": "@agm/_dev",
+  "name": "@agm/core",
   "private": true,
   "version": "1.0.0-beta.1",
   "description": "Angular 2+ components for Google Maps",
@@ -7,6 +7,10 @@
     "type": "git",
     "url": "https://github.com/SebastianM/angular-google-maps.git"
   },
+  "main": "dist/core/core.umd.js",
+  "module": "dist/core/index.js",
+  "es2015": "dist/core/index.js",
+  "typings": "dist/core/index.d.ts",
   "keywords": [
     "angular",
     "ng",
@@ -20,7 +24,7 @@
   "scripts": {
     "clean": "rimraf dist && rimraf .tmp && mkdir dist && mkdir .tmp && rimraf 'packages/**/*.ngfactory.ts'",
     "prebuild": "npm run clean",
-    "build": "npm run lint && npm run scripts && npm run packagejson && npm run copyassets",
+    "build": "npm run scripts && npm run packagejson && npm run copyassets",
     "lint": "tslint -c tslint.json 'packages/**/*.ts'",
     "packagejson": "node ./scripts/create-package-json.js",
     "copyassets": "node ./scripts/copy-package-assets.js",
@@ -31,7 +35,8 @@
     "bundle:umd:snazzy": "rollup -c rollup.snazzy-info-window.config.js",
     "ngc:esm": "ngc -p tsconfig.json",
     "clang:format": "clang-format --glob=packages/**/*.ts -i",
-    "postngc:esm": "mkdir -p dist/ && cp -R .tmp/esm/* dist/ && rimraf packages/**/*.ngfactory.ts",
+    "postngc:esma": "mkdir -p dist/ && cp -R .tmp/esm/* dist/ && rimraf packages/**/*.ngfactory.ts",
+    "postngc:esm": "xcopy .tmp\\esm\\* dist /S /E /Q /Y && rimraf packages/**/*.ngfactory.ts",
     "test": "karma start",
     "test:watch": "karma start --no-single-run --auto-watch",
     "ci": "npm run build && npm run test",
