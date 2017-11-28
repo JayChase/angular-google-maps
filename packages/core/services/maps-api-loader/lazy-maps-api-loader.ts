@@ -1,4 +1,4 @@
-import {Inject, Injectable, OpaqueToken} from '@angular/core';
+import {Inject, Injectable, InjectionToken} from '@angular/core';
 
 import {DocumentRef, WindowRef} from '../../utils/browser-globals';
 
@@ -14,7 +14,7 @@ export enum GoogleMapsScriptProtocol {
  * Token for the config of the LazyMapsAPILoader. Please provide an object of type {@link
  * LazyMapsAPILoaderConfig}.
  */
-export const LAZY_MAPS_API_CONFIG = new OpaqueToken('angular-google-maps LAZY_MAPS_API_CONFIG');
+export const LAZY_MAPS_API_CONFIG = new InjectionToken('angular-google-maps LAZY_MAPS_API_CONFIG');
 
 /**
  * Configuration for the {@link LazyMapsAPILoader}.

@@ -23,7 +23,7 @@ var GoogleMapsScriptProtocol;
  * Token for the config of the LazyMapsAPILoader. Please provide an object of type {@link
  * LazyMapsAPILoaderConfig}.
  */
-exports.LAZY_MAPS_API_CONFIG = new core_1.OpaqueToken('angular-google-maps LAZY_MAPS_API_CONFIG');
+exports.LAZY_MAPS_API_CONFIG = new core_1.InjectionToken('angular-google-maps LAZY_MAPS_API_CONFIG');
 var LazyMapsAPILoader = (function (_super) {
     __extends(LazyMapsAPILoader, _super);
     function LazyMapsAPILoader(config, w, d) {
